@@ -45,7 +45,7 @@ def main():
     ''' Main '''
     sns.set()
 
-    syphax = [
+    time = [
         1.1,
         1.1,
         1.08,
@@ -63,34 +63,36 @@ def main():
         1.1
     ]
 
-    unit = 's'
+    unit = {
+        'time': 's'
+    }
 
-    print("~"*3 + " Syphax's Data " + "~"*30)
+    print("~"*3 + " Time Data " + "~"*30)
 
-    # Calculate mean and standard deviation of Syphax's Data.
-    mu_heads, sigma_heads = get_mu_and_sigma(syphax)
-    print(f"{'Mean ':-<30} {round(mu_heads, 10):<12} {unit}")
-    # print(f"{'Standard deviation ':-<30} {round(sigma_heads, 10):<12} °")
+    # Calculate mean and standard deviation of the time data.
+    mu_time, sigma_time = get_mu_and_sigma(time)
+    print(f"{'Mean ':-<30} {round(mu_time, 10):<12} {unit['time']}")
+    # print(f"{'Standard deviation ':-<30} {round(sigma_time, 10):<12} °")
 
-    # Calculate the statistical uncertainty of Syphax's Data.
-    statistical_un_heads = get_statistical_un(sigma_heads, len(syphax))
-    print(f"{'Statistical uncertainty ':-<30} {round(statistical_un_heads, 10):<12} {unit}")
+    # Calculate the statistical uncertainty of the time data.
+    statistical_un_time = get_statistical_un(sigma_time, len(time))
+    print(f"{'Statistical uncertainty ':-<30} {round(statistical_un_time, 10):<12} {unit['time']}")
 
-    # Calculate the systematic uncertainty of Syphax's Data.
-    systematic_un_heads = 0.01
-    print(f"{'Systematic uncertainty ':-<30} {systematic_un_heads:<12} {unit}")
+    # Calculate the systematic uncertainty of the time data.
+    systematic_un_time = 0.01
+    print(f"{'Systematic uncertainty ':-<30} {systematic_un_time:<12} {unit['time']}")
 
-    # Calculate the uncertainty of Syphax's Data.
-    uncertainty_angle = get_uncertainty(statistical_un_heads, systematic_un_heads)
-    print(f"{'Uncertainty ':-<30} {round(uncertainty_angle, 10):<12} {unit}")
+    # Calculate the uncertainty of the time data.
+    uncertainty_time = get_uncertainty(statistical_un_time, systematic_un_time)
+    print(f"{'Uncertainty ':-<30} {round(uncertainty_time, 10):<12} {unit['time']}")
 
-    # Calculate the angle for Syphax's Data.
-    angle_for_heads = str(round(mu_heads, 2)) + " ± " + str(round(uncertainty_angle, 2))
-    print(f"{'Time ':-<30} {angle_for_heads:<12} {unit}")
+    # Display the time with uncertainty,
+    time_with_un = str(round(mu_time, 2)) + " ± " + str(round(uncertainty_time, 2))
+    print(f"{'Time ':-<30} {time_with_un:<12} {unit['time']}")
 
-    # Plot the histogram of Syphax's Data.
-    heads_title = "Histogram of the time measured"
-    show_histogram(syphax, mu_heads, sigma_heads, heads_title)
+    # Plot the histogram of the time data.
+    time_title = "Histogram of the time measured"
+    show_histogram(time, mu_time, sigma_time, time_title)
 
 if __name__ == "__main__":
     main()
