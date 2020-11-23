@@ -86,7 +86,7 @@ def main():
     print(f"{'Uncertainty ':-<30} {round(uncertainty_time, 10):<12} {unit['time']}")
 
     # Display the time with uncertainty.
-    time_with_un = str(round(mu_time, 2)) + " ± " + str(round(uncertainty_time, 2))
+    time_with_un = str(round(mu_time, 2)) + " ± " + str(round(uncertainty_time, 3))
     print(f"{'Time ':-<30} {time_with_un:<12} {unit['time']}")
 
     # Plot the histogram of the time data.
