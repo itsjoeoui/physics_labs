@@ -77,7 +77,7 @@ def main():
     print(f"{'Statistical uncertainty ':-<30} {round(statistical_un_heads, 10):<12} {unit}")
 
     # Calculate the systematic uncertainty of Syphax's Data.
-    systematic_un_heads = 0.05
+    systematic_un_heads = 0.01
     print(f"{'Systematic uncertainty ':-<30} {systematic_un_heads:<12} {unit}")
 
     # Calculate the uncertainty of Syphax's Data.
