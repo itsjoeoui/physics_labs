@@ -72,7 +72,6 @@ def main():
     # Calculate mean and standard deviation of the time data.
     mu_time, sigma_time = get_mu_and_sigma(time)
     print(f"{'Mean ':-<30} {round(mu_time, 10):<12} {unit['time']}")
-    # print(f"{'Standard deviation ':-<30} {round(sigma_time, 10):<12} °")
 
     # Calculate the statistical uncertainty of the time data.
     statistical_un_time = get_statistical_un(sigma_time, len(time))
@@ -86,7 +85,7 @@ def main():
     uncertainty_time = get_uncertainty(statistical_un_time, systematic_un_time)
     print(f"{'Uncertainty ':-<30} {round(uncertainty_time, 10):<12} {unit['time']}")
 
-    # Display the time with uncertainty,
+    # Display the time with uncertainty.
     time_with_un = str(round(mu_time, 2)) + " ± " + str(round(uncertainty_time, 2))
     print(f"{'Time ':-<30} {time_with_un:<12} {unit['time']}")
 
