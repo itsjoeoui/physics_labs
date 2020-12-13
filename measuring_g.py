@@ -78,7 +78,7 @@ def main():
     print(f"{'Statistical uncertainty ':-<30} {round(statistical_un_time, 10):<12} {unit['time']}")
 
     # Calculate the systematic uncertainty of the time data.
-    systematic_un_time = 0.01
+    systematic_un_time = 0.0033
     print(f"{'Systematic uncertainty ':-<30} {systematic_un_time:<12} {unit['time']}")
 
     # Calculate the uncertainty of the time data.
