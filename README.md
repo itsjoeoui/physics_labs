@@ -1,3 +1,3 @@
-# mechanics_labs
+# physics_labs
 
-The place where I store my scripts for JF mechanics labs.
+The place where I store my scripts for physics labs.
